@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP LAB</title>
+</head>
+
+<body>
+
+    <h2>JavaScript OOP LAB</h2>
+
+    <p>Results of the constructor function with different instructors:</p>
+
+    <p id="demo"></p>
+
+
+    <script>
+        /*
+             Your Task (Mandatory Lab):
+
+             Create a constructor named "Instructor"
+             
+             The properties:
+             - the name of instructor: name
+             - the campus name: campus
+             - the program name: program
+             - the hire date: hireDate
+
+             A method to return: instInfo()
+             - just return one string: the Instructor name, campus name, program name
+
+            Then create a couple of instructors (instances of the constructor)
+        */
+		
+
+        // Constructor function for Instructor
+        function Instructor(name, campus, program, hireDate) {
+
+            // Object properties
+            this.name = name;
+            this.campus = campus;
+            this.program = program;
+            this.hireDate = hireDate;
+
+            //Object method for returning string
+            this.instInfo = function() {
+                return `Instructor name: ${this.name}, Campus name: ${this.campus}, Program name: ${this.program}`;
+            }
+        }
+
+        // Instructor instances of the instructor - constructor object
+        let instructor1 = new Instructor("James Bond", "Seneca", "CIA 101", "20 September 1991");
+        let instructor2 = new Instructor("Johnny Cage", "Mortal Kombat", "Protector", "15 January 2001");
+        let instructor3 = new Instructor("Sylvester Stallone", "Creed", "Boxing", "25 November 2015");
+
+        // Calling and Displaying method instInfo()
+        document.getElementById("demo").innerHTML = `
+        ${instructor1.instInfo()}<br>
+        ${instructor2.instInfo()}<br>
+        ${instructor3.instInfo()}
+        `;
+		
+    </script>
+</body>
+
+</html>
